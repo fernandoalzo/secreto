@@ -1,13 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-100">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>secreto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Secreto</title>
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/cover.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/cipher_space.css">
 </head>
-<body>
-    <script src="./js/crypto-js.js"></script>
-    <script src="./js/main.js"></script>
+
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Secreto</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link accion active" href="#" id="cifrar">Cifrar</a>
+          <a class="nav-link accion" href="#" id="descifrar">Descifrar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <div id="seccion_cifrado_descifrado"></div>
+      <form class="contact1-form validate-form">
+        <div class="wrap-input1 validate-input" data-validate="Message is required">
+          <textarea class="input1" name="message" placeholder="Mensaje para cifrar..." required></textarea>
+          <span class="shadow-input1"></span>
+        </div>
+        <br>
+        <div class="wrap-input1 validate-input" data-validate="Subject is required">
+          <input class="input1" type="text" name="subject" placeholder="Clave" required>
+          <span class="shadow-input1"></span>
+        </div>
+        <div class="container-contact1-form-btn">
+          <button class="contact1-form-btn">
+            <span>
+              Cifrar
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+      </form>
+    </main>
+    <footer class="mt-auto text-white-50">
+      <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a
+          href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+    </footer>
+  </div>
+<script src="./js/crypto-js.js"></script>
+<script src="./js/main.js"></script>
 </body>
+
 </html>
