@@ -12,7 +12,7 @@ export async function home() {
     let label_div_section_home = document.createTextNode("Hola mundo")
     let home_img = document.createElement("img")
     home_img.setAttribute("src", "./img/spy.png")
-    home_img.style.height = "500px"
+    home_img.style.height = "400px"
     // setting html
     div_section_home.append(home_img)
     div_main_section.append(div_section_home)
