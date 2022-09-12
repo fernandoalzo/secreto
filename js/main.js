@@ -5,19 +5,23 @@ console.log(encrypted_AES.toString())
 var decrypted_AES = CryptoJS.AES.decrypt(encrypted_AES, "Passphrase")
 console.log(decrypted_AES.toString(CryptoJS.enc.Utf8))
 
-function main(){
+async function main(){
+    const html = await import("./html.js")
+    
+    html.home()
     let acciones = document.querySelectorAll(".accion")
     acciones.forEach((acccion)=>{
         acccion.addEventListener("click", (evento)=>{
             if (evento.target.id == "cifrar"){
-                console.log("cifrar")
+                html.zona_cifrado()
             }
             if (evento.target.id == "descifrar"){
-                console.log("descifrar")
+                html.zona_descifrado()
             }
             
         })
     })
+
 }
 
 main()
