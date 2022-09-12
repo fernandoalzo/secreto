@@ -1,5 +1,4 @@
 export async function home() {
-    console.log("desde el Home")
     let seccion_cifrado_descifrado = document.querySelector("#seccion_cifrado_descifrado")
     let check_div_main_section = document.querySelector("#div_main_section")
     if (check_div_main_section) {
@@ -20,7 +19,6 @@ export async function home() {
 }
 
 export async function zona_cifrado() {
-    console.log("Aqui zona de cifrado")
     let seccion_cifrado_descifrado = document.querySelector("#seccion_cifrado_descifrado")
     let check_div_main_section = document.querySelector("#div_main_section")
     if (check_div_main_section) {
@@ -39,6 +37,7 @@ export async function zona_cifrado() {
     let textarea_text_to_encrypt = document.createElement("textarea")
     textarea_text_to_encrypt.setAttribute("class", "input1")
     textarea_text_to_encrypt.setAttribute("placeholder", "Mensaje para cifrar...")
+    textarea_text_to_encrypt.setAttribute("required", "")
     // configuracion para el efecto verde cuando se da click
     let span_textarea = document.createElement("span")
     span_textarea.setAttribute("class", "shadow-input1")
@@ -52,6 +51,7 @@ export async function zona_cifrado() {
     input_clave.setAttribute("class", "input1")
     input_clave.setAttribute("type", "text")
     input_clave.setAttribute("placeholder", "Clave de cifrado")
+    input_clave.setAttribute("required", "")
     // configuracion para el efecto verde cuando se da click
     let span_input_clave = document.createElement("span")
     span_input_clave.setAttribute("class", "shadow-input1")
@@ -59,22 +59,21 @@ export async function zona_cifrado() {
     let div_button = document.createElement("div")
     div_button.setAttribute("class", "container-run-form-btn")
     // create button
-    let button_run_cifrado = document.createElement("button")
-    button_run_cifrado.setAttribute("class", "run-form-btn")
-    button_run_cifrado.setAttribute("id", "btn_cifrar")
+    let btn_cifrar = document.createElement("button")
+    btn_cifrar.setAttribute("class", "run-form-btn")
+    btn_cifrar.setAttribute("id", "btn_cifrar")
     let label_button = document.createTextNode("Run..")
     // config html
     div_textarea.append(textarea_text_to_encrypt, span_textarea)
     div_clave.append(input_clave, span_input_clave)
-    button_run_cifrado.append(label_button)
-    div_button.append(button_run_cifrado)
+    btn_cifrar.append(label_button)
+    div_button.append(btn_cifrar)
     formulario_cifrado.append(div_textarea, div_clave, div_button)
     div_main_section.append(formulario_cifrado)
     seccion_cifrado_descifrado.append(div_main_section)
 }
 
 export async function zona_descifrado() {
-    console.log("Aqui Zona de descifrado")
     let seccion_cifrado_descifrado = document.querySelector("#seccion_cifrado_descifrado")
     let check_div_main_section = document.querySelector("#div_main_section")
     if (check_div_main_section) {
@@ -113,15 +112,15 @@ export async function zona_descifrado() {
     let div_button = document.createElement("div")
     div_button.setAttribute("class", "container-run-form-btn")
     // create button
-    let button_run_descifrado = document.createElement("button")
-    button_run_descifrado.setAttribute("class", "run-form-btn")
-    button_run_descifrado.setAttribute("id", "btn_descifrar")
+    let btn_descifrar = document.createElement("button")
+    btn_descifrar.setAttribute("class", "run-form-btn")
+    btn_descifrar.setAttribute("id", "btn_descifrar")
     let label_button = document.createTextNode("Run..")
     // config html
     div_textarea.append(textarea_text_to_encrypt, span_textarea)
     div_clave.append(input_clave, span_input_clave)
-    button_run_descifrado.append(label_button)
-    div_button.append(button_run_descifrado)
+    btn_descifrar.append(label_button)
+    div_button.append(btn_descifrar)
     formulario_descifrado.append(div_textarea, div_clave, div_button)
     div_main_section.append(formulario_descifrado)
     seccion_cifrado_descifrado.append(div_main_section)
