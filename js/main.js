@@ -2,7 +2,7 @@ async function main() {
     const html = await import("./html.js")
     const cifrado = await import("./cifrado.js")
     const descifrado = await import("./descifrado.js")
-
+    // create the home section   
     html.home()
     let acciones = document.querySelectorAll(".accion")
     acciones.forEach((acccion) => {
@@ -35,8 +35,6 @@ async function main() {
                         let texto_descifrado = descifrado.texto_descifrado(text_to_decrypt.value, clave_descifrado.value)
                         console.log(texto_descifrado)
                     }
-
-
                 })
             }
         })
