@@ -37,6 +37,7 @@ export async function zona_cifrado() {
     let textarea_text_to_encrypt = document.createElement("textarea")
     textarea_text_to_encrypt.setAttribute("class", "input1")
     textarea_text_to_encrypt.setAttribute("placeholder", "Mensaje para cifrar...")
+    textarea_text_to_encrypt.setAttribute("id", "text_to_encrypt")
     textarea_text_to_encrypt.setAttribute("required", "")
     // configuracion para el efecto verde cuando se da click
     let span_textarea = document.createElement("span")
@@ -51,6 +52,7 @@ export async function zona_cifrado() {
     input_clave.setAttribute("class", "input1")
     input_clave.setAttribute("type", "text")
     input_clave.setAttribute("placeholder", "Clave de cifrado")
+    input_clave.setAttribute("id", "clave_cifrado")
     input_clave.setAttribute("required", "")
     // configuracion para el efecto verde cuando se da click
     let span_input_clave = document.createElement("span")
@@ -68,7 +70,7 @@ export async function zona_cifrado() {
     div_clave.append(input_clave, span_input_clave)
     btn_cifrar.append(label_button)
     div_button.append(btn_cifrar)
-    formulario_cifrado.append(div_textarea, div_clave, div_button)
+    formulario_cifrado.append(div_textarea, salto_linea, div_clave, div_button)
     div_main_section.append(formulario_cifrado)
     seccion_cifrado_descifrado.append(div_main_section)
 }
@@ -89,9 +91,10 @@ export async function zona_descifrado() {
     let div_textarea = document.createElement("div")
     div_textarea.setAttribute("class", "wrap-input1 validate-input")
     // tesxt area text to encrypt
-    let textarea_text_to_encrypt = document.createElement("textarea")
-    textarea_text_to_encrypt.setAttribute("class", "input1")
-    textarea_text_to_encrypt.setAttribute("placeholder", "Mensaje cifrado...")
+    let textarea_text_to_decrypt = document.createElement("textarea")
+    textarea_text_to_decrypt.setAttribute("class", "input1")
+    textarea_text_to_decrypt.setAttribute("placeholder", "Mensaje cifrado...")
+    textarea_text_to_decrypt.setAttribute("id", "text_to_decrypt")
     // configuracion para el efecto verde cuando se da click
     let span_textarea = document.createElement("span")
     span_textarea.setAttribute("class", "shadow-input1")
@@ -105,6 +108,7 @@ export async function zona_descifrado() {
     input_clave.setAttribute("class", "input1")
     input_clave.setAttribute("type", "text")
     input_clave.setAttribute("placeholder", "Clave de descifrado")
+    input_clave.setAttribute("id", "clave_descifrado")
     // configuracion para el efecto verde cuando se da click
     let span_input_clave = document.createElement("span")
     span_input_clave.setAttribute("class", "shadow-input1")
@@ -117,11 +121,11 @@ export async function zona_descifrado() {
     btn_descifrar.setAttribute("id", "btn_descifrar")
     let label_button = document.createTextNode("Run..")
     // config html
-    div_textarea.append(textarea_text_to_encrypt, span_textarea)
+    div_textarea.append(textarea_text_to_decrypt, span_textarea)
     div_clave.append(input_clave, span_input_clave)
     btn_descifrar.append(label_button)
     div_button.append(btn_descifrar)
-    formulario_descifrado.append(div_textarea, div_clave, div_button)
+    formulario_descifrado.append(div_textarea, salto_linea, div_clave, div_button)
     div_main_section.append(formulario_descifrado)
     seccion_cifrado_descifrado.append(div_main_section)
 }
