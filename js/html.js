@@ -38,7 +38,7 @@ export async function zona_cifrado() {
     textarea_text_to_encrypt.setAttribute("class", "input1")
     textarea_text_to_encrypt.setAttribute("placeholder", "Mensaje para cifrar...")
     textarea_text_to_encrypt.setAttribute("id", "text_to_encrypt")
-    textarea_text_to_encrypt.setAttribute("required", "")
+    textarea_text_to_encrypt.setAttribute("maxlength", "500")
     // configuracion para el efecto verde cuando se da click
     let span_textarea = document.createElement("span")
     span_textarea.setAttribute("class", "shadow-input1")
@@ -53,7 +53,7 @@ export async function zona_cifrado() {
     input_clave.setAttribute("type", "text")
     input_clave.setAttribute("placeholder", "Clave de cifrado")
     input_clave.setAttribute("id", "clave_cifrado")
-    input_clave.setAttribute("required", "")
+    input_clave.setAttribute("maxlength", "100")
     // configuracion para el efecto verde cuando se da click
     let span_input_clave = document.createElement("span")
     span_input_clave.setAttribute("class", "shadow-input1")
@@ -95,6 +95,7 @@ export async function zona_descifrado() {
     textarea_text_to_decrypt.setAttribute("class", "input1")
     textarea_text_to_decrypt.setAttribute("placeholder", "Mensaje cifrado...")
     textarea_text_to_decrypt.setAttribute("id", "text_to_decrypt")
+    textarea_text_to_decrypt.setAttribute("maxlength", "1000")
     // configuracion para el efecto verde cuando se da click
     let span_textarea = document.createElement("span")
     span_textarea.setAttribute("class", "shadow-input1")
@@ -109,6 +110,7 @@ export async function zona_descifrado() {
     input_clave.setAttribute("type", "text")
     input_clave.setAttribute("placeholder", "Clave de descifrado")
     input_clave.setAttribute("id", "clave_descifrado")
+    input_clave.setAttribute("maxlength", "100")
     // configuracion para el efecto verde cuando se da click
     let span_input_clave = document.createElement("span")
     span_input_clave.setAttribute("class", "shadow-input1")
