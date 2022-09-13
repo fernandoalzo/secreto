@@ -17,7 +17,14 @@ async function main() {
                     if (text_to_encrypt.value != "" && clave_cifrado.value != "") {
                         let texto_cifrado = cifrado.texto_cifrado(text_to_encrypt.value, clave_cifrado.value)
                         text_to_encrypt.value = texto_cifrado
-                        btn_cifrar.disabled = true
+                        btn_cifrar.remove()
+                        html.button_copy_text_cifrado()
+                        // copy cipher text to clipboard
+                        let btn_copiar_text_cifrado = document.querySelector("#copiar_text_cifrado")
+                        btn_copiar_text_cifrado.addEventListener("click", _=>{
+                            text_to_encrypt.select()
+                            navigator.clipboard.writeText(text_to_encrypt.value)
+                        })
                     }
                 })
             }
@@ -34,8 +41,14 @@ async function main() {
                     if (text_to_decrypt.value != "" && clave_descifrado.value != "") {
                         let texto_descifrado = descifrado.texto_descifrado(text_to_decrypt.value, clave_descifrado.value)
                         text_to_decrypt.value = texto_descifrado
-                        btn_descifrar.disabled = true
-
+                        btn_descifrar.remove()
+                        html.button_copy_text_descifrado()
+                        // copy text to clipboard
+                        let btn_copiar_text_descifrado = document.querySelector("#copiar_text_descifrado")
+                        btn_copiar_text_descifrado.addEventListener("click", _=>{
+                            text_to_decrypt.select()
+                            navigator.clipboard.writeText(text_to_decrypt.value)
+                        })
                     }
                 })
             }

@@ -60,6 +60,7 @@ export async function zona_cifrado() {
     // div for button Run
     let div_button = document.createElement("div")
     div_button.setAttribute("class", "container-run-form-btn")
+    div_button.setAttribute("id", "div_boton_cifrar")
     // create button
     let btn_cifrar = document.createElement("button")
     btn_cifrar.setAttribute("class", "run-form-btn")
@@ -117,6 +118,7 @@ export async function zona_descifrado() {
     // div for button Run
     let div_button = document.createElement("div")
     div_button.setAttribute("class", "container-run-form-btn")
+    div_button.setAttribute("id", "div_boton_descifrar")
     // create button
     let btn_descifrar = document.createElement("button")
     btn_descifrar.setAttribute("class", "run-form-btn")
@@ -130,4 +132,38 @@ export async function zona_descifrado() {
     formulario_descifrado.append(div_textarea, salto_linea, div_clave, div_button)
     div_main_section.append(formulario_descifrado)
     seccion_cifrado_descifrado.append(div_main_section)
+}
+
+export async function button_copy_text_cifrado(){
+    let div_boton_cifrar = document.querySelector("#div_boton_cifrar")
+    let a = document.createElement("a")
+    a.setAttribute("href", "#")
+    let img_copy_texto_cifrado = document.createElement("img")
+    img_copy_texto_cifrado.setAttribute("src", "./img/icons/copy-regular.svg")
+    img_copy_texto_cifrado.setAttribute("data-toggle", "tooltip")
+    img_copy_texto_cifrado.setAttribute("data-placement", "top")
+    img_copy_texto_cifrado.setAttribute("title", "Copiar texto cifrado")
+    img_copy_texto_cifrado.setAttribute("id", "copiar_text_cifrado")
+    img_copy_texto_cifrado.style.width = '50px';
+    img_copy_texto_cifrado.style.height = '50px';
+    // setting html
+    a.append(img_copy_texto_cifrado)
+    div_boton_cifrar.append(a)
+}
+
+export async function button_copy_text_descifrado(){
+    let div_boton_descifrar = document.querySelector("#div_boton_descifrar")
+    let a = document.createElement("a")
+    a.setAttribute("href", "#")
+    let img_copy_texto_descifrado = document.createElement("img")
+    img_copy_texto_descifrado.setAttribute("src", "./img/icons/copy-regular.svg")
+    img_copy_texto_descifrado.setAttribute("data-toggle", "tooltip")
+    img_copy_texto_descifrado.setAttribute("data-placement", "top")
+    img_copy_texto_descifrado.setAttribute("title", "Copiar texto")
+    img_copy_texto_descifrado.setAttribute("id", "copiar_text_descifrado")
+    img_copy_texto_descifrado.style.width = '50px';
+    img_copy_texto_descifrado.style.height = '50px';
+    // setting html
+    a.append(img_copy_texto_descifrado)
+    div_boton_descifrar.append(a)
 }
